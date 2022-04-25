@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-    DOCKER_IMAGE_NAME = "sunitparekh/metadata"
+    DOCKER_IMAGE_NAME = "richatekchandani31/infra-bootcamp-metadata"
     DOCKER_USERNAME = "richatekchandani31"
     DOCKER_PASSWORD = credentials("DOCKER_SECRET")
     }
@@ -43,8 +43,8 @@ pipeline {
                             steps{
                                 sh '''
                                 echo "deploying the application ...."
-                                docker rm -f metadata || true
-                                docker run -d -p 4444:4444 --name metadata "${DOCKER_IMAGE_NAME}":latest
+                                docker rm -f infra-bootcamp-metadata || true
+                                docker run -d -p 4444:4444 --name infra-bootcamp-metadata "${DOCKER_IMAGE_NAME}":latest
                                 '''
                                 }
                           }
