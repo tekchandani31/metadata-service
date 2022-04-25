@@ -28,13 +28,13 @@ pipeline {
                         sh '''
                         echo "pushing docker image ...."
                         docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
-                        docker tag "${DOCKER_IMAGE_NAME}" "${DOCKER_IMAGE_NAME}": "$BUILD_NUMBER"
-                        docker push "${DOCKER_IMAGE_NAME}": "$BUILD_NUMBER"
-                        docker push "${DOCKER_IMAGE_NAME}": latest
+                        docker tag "${DOCKER_IMAGE_NAME}" "${DOCKER_IMAGE_NAME}":"$BUILD_NUMBER"
+                        docker push "${DOCKER_IMAGE_NAME}":"$BUILD_NUMBER"
+                        docker push "${DOCKER_IMAGE_NAME}":latest
 
                         echo "cleaning up local images image ...."
-                        docker rmi "${DOCKER_IMAGE_NAME}": "$BUILD_NUMBER"
-                        docker rmi "${DOCKER_IMAGE_NAME}": latest
+                        docker rmi "${DOCKER_IMAGE_NAME}":"$BUILD_NUMBER"
+                        docker rmi "${DOCKER_IMAGE_NAME}":latest
                         '''
                         }
                         }
