@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-    DOCKER_IMAGE_NAME = "richatekchandani31/infra-bootcamp-metadata"
+    DOCKER_IMAGE_NAME = "sunitparekh/metadata:v1.0"
     DOCKER_USERNAME = "richatekchandani31"
     DOCKER_PASSWORD = credentials("DOCKER_SECRET")
     }
