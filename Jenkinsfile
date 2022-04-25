@@ -44,7 +44,7 @@ pipeline {
                                 sh '''
                                 echo "deploying the application ...."
                                 docker rm -f infra-bootcamp-metadata || true
-                                docker run -d -p 4444:4444 --name infra-bootcamp-metadata "${DOCKER_IMAGE_NAME}":latest
+                                docker run -d -p 4444:8080 --name infra-bootcamp-metadata "${DOCKER_IMAGE_NAME}":latest
                                 '''
                                 }
                           }
